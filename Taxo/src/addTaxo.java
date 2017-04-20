@@ -92,7 +92,7 @@ public class addTaxo {
 		
 		JButton btnCreateNewTaxoButton = new JButton("Создать");
 
-		btnCreateNewTaxoButton.addActionListener(new addButtonControl(txtNewTaxoCitiName,txtNewTaxoCitiName,comboBox.getSelectedItem()));
+		btnCreateNewTaxoButton.addActionListener(new addButtonControl(txtNewTaxoCitiName,textFieldNewTaxoSelfName,comboBox));
 		btnCreateNewTaxoButton.setBounds(10, 225, 117, 25);
 		panel.add(btnCreateNewTaxoButton);
 		

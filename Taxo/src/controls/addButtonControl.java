@@ -5,6 +5,7 @@ package controls;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 import common.*;
@@ -12,9 +13,9 @@ import common.*;
 
 public class addButtonControl extends controls {
 
-	private String citiName;
-	private String taxoName;
-	private Object systemName;
+	private JTextField citiName;
+	private JTextField taxoName;
+	private JComboBox systemName;
 	private ActionEvent arg0;
 	/**
 	 * 
@@ -27,28 +28,22 @@ public class addButtonControl extends controls {
 		// TODO Auto-generated constructor stub
 		this.arg0 = arg0;
 	}
-	public addButtonControl(String citiName, String taxoName, Object systemName) {
-		// TODO Auto-generated constructor stub
-		this.citiName = citiName;
-		this.taxoName = taxoName;
-		this.systemName = systemName;
-		System.out.println(this.toString());
-	}
+	
 	public addButtonControl(JTextField txtNewTaxoCitiName,
-			JTextField txtNewTaxoCitiName2, Object selectedItem) {
+			JTextField txtNewTaxoCitiName2, JComboBox selectedItem) {
 		// TODO Auto-generated constructor stub
-		this.citiName = txtNewTaxoCitiName.getText();
-		this.taxoName = txtNewTaxoCitiName2.getText();
-		this.systemName = selectedItem.toString();
-		System.out.println(this.toString());
+		this.citiName = txtNewTaxoCitiName;
+		this.taxoName = txtNewTaxoCitiName2;
+		this.systemName = selectedItem;
+		System.out.println(txtNewTaxoCitiName.toString());
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
-		taxoPark MyNewTaxo = new taxoPark(taxoName, citiName, systemName.toString());
+		String s = (String)systemName.getSelectedItem();
+		taxoPark MyNewTaxo = new taxoPark(taxoName.getText(), citiName.getText(), s);
 		allControll.addModelItem(MyNewTaxo);
-		System.out.println(taxoName);
+		System.out.println(taxoName.getText());
 		System.out.println("add Taxo");
 	}
 	/* (non-Javadoc)

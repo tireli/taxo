@@ -4,10 +4,14 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
+
 import java.awt.BorderLayout;
+
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
+
 import java.awt.Color;
+
 import javax.swing.JList;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
@@ -21,10 +25,16 @@ import javax.swing.JButton;
 import javax.swing.border.MatteBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.JCheckBox;
+
 import java.awt.CardLayout;
+
 import javax.swing.JMenuItem;
+
+import common.serialClassAdapter;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 
 public class Taksi {
@@ -35,6 +45,7 @@ public class Taksi {
 	private JTable table;
 	private JTable table_1;
 	private JTable table_2;
+	private ArrayList<serialClassAdapter> modelList;
 
 	/**
 	 * Launch the application.
@@ -70,6 +81,13 @@ public class Taksi {
 	 */
 	public Taksi() {
 		initialize();
+	}
+	public Taksi(ArrayList<serialClassAdapter> modelList) {
+		
+		this.modelList = modelList;
+		
+		initialize();
+		
 	}
 
 	/**
