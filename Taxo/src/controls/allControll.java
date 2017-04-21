@@ -31,7 +31,13 @@ public class allControll {
 	}
 	
 	
-	public void run() {
+	public static ArrayList<serialClassAdapter> getModelList() {
+		return modelList;
+	}
+
+
+	public void runInit() {
+		System.out.println("In run method");
 		File f1 = new File(startProps.getPath()+startProps.getSeriasFileName());
 		if (f1.exists()) {
 			//Read file to load current model

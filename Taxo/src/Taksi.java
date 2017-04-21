@@ -1,3 +1,4 @@
+import java.awt.Component;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,6 +13,7 @@ import javax.swing.border.LineBorder;
 
 import java.awt.Color;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
@@ -31,10 +33,12 @@ import java.awt.CardLayout;
 import javax.swing.JMenuItem;
 
 import common.serialClassAdapter;
+import controls.allControll;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Taksi {
@@ -45,7 +49,7 @@ public class Taksi {
 	private JTable table;
 	private JTable table_1;
 	private JTable table_2;
-	private ArrayList<serialClassAdapter> modelList;
+	private ArrayList<serialClassAdapter> MDList;
 
 	/**
 	 * Launch the application.
@@ -84,7 +88,7 @@ public class Taksi {
 	}
 	public Taksi(ArrayList<serialClassAdapter> modelList) {
 		
-		this.modelList = modelList;
+		this.MDList = modelList;
 		
 		initialize();
 		
@@ -126,6 +130,18 @@ public class Taksi {
 		pLeftTList.add(lblNewLabel);
 		
 		JList list = new JList();
+		DefaultListModel listModel = new DefaultListModel();
+		MDList = allControll.getModelList();//.getMyObj();//.toArray();
+		
+		for (int i = 0; i < MDList.size(); i++) {
+			serialClassAdapter singleAdapter = MDList.get(i);
+			Object taxoParkInfo = singleAdapter.getMyObj();
+			listModel.addElement(((Component) taxoParkInfo).getName());
+		}
+		listModel.addElement("Jone Doe");
+		
+		list.setModel(listModel);
+		
 		list.setBounds(12, 33, 183, 288);
 		pLeftTList.add(list);
 		

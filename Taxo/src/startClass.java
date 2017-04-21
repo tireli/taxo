@@ -11,7 +11,7 @@ public class startClass {
 		
 		//init section
 		allControll c = new allControll();
-		c.run();
+		c.runInit();
 		
 		
 		//look at history

@@ -36,4 +36,5 @@ public class serialClassAdapter extends someClassToTest implements Serializable 
 	
 	
 	
+	
 }
