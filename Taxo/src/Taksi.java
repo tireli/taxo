@@ -33,6 +33,7 @@ import java.awt.CardLayout;
 import javax.swing.JMenuItem;
 
 import common.serialClassAdapter;
+import common.taxoPark;
 import controls.allControll;
 
 import java.awt.event.ActionListener;
@@ -132,11 +133,11 @@ public class Taksi {
 		JList list = new JList();
 		DefaultListModel listModel = new DefaultListModel();
 		MDList = allControll.getModelList();//.getMyObj();//.toArray();
-		
+		System.out.println(MDList.toString());
 		for (int i = 0; i < MDList.size(); i++) {
 			serialClassAdapter singleAdapter = MDList.get(i);
-			Object taxoParkInfo = singleAdapter.getMyObj();
-			listModel.addElement(((Component) taxoParkInfo).getName());
+			taxoPark taxoParkInfo = (taxoPark) singleAdapter.getMyObj();
+			listModel.addElement(taxoParkInfo.getName());
 		}
 		listModel.addElement("Jone Doe");
 		

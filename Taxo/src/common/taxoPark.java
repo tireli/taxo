@@ -35,7 +35,7 @@ public class taxoPark implements Serializable{
 	/**
 	 * @return the name
 	 */
-	public String getMame() {
+	public String getName() {
 		return name;
 	}
 	
@@ -56,9 +56,9 @@ public class taxoPark implements Serializable{
 	//Seters
 	////////////////////////////////////////////////////////////////
 	/**
-	 * @param mame the name to set
+	 * @param Name the name to set
 	 */
-	public void setMame(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
